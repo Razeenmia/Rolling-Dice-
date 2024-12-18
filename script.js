@@ -1,22 +1,14 @@
-// Get references to the DOM elements
-const rollButton = document.getElementById("rollButton");
-const dice = document.getElementById("dice");
-const dice2 = document.getElementById("dice2");
-
-// Function to generate a random number between 1 and 6 (for a dice roll)
-function rollDie() {
-    return Math.floor(Math.random() * 6) + 1;
+var dice;
+var dices=   [
+  '\u2680', // ⚀ (die face 1)
+  '\u2681', // ⚁ (die face 2)
+  '\u2682', // ⚂ (die face 3)
+  '\u2683', // ⚃ (die face 4)
+  '\u2684', // ⚄ (die face 5)
+  '\u2685'  // ⚅ (die face 6)
+];
+var stopped=true;
+var t;
+function change() {
+   var random = Math.random()*6;
 }
-
-// Function to update the dice with the new values
-function rollDice() {
-    const roll1 = rollDie();
-    const roll2 = rollDie();
-    
-    // Update the dice elements with the random numbers
-    dice.textContent = roll1;
-    dice2.textContent = roll2;
-}
-
-// Add an event listener to the roll button
-rollButton.addEventListener("click", rollDice);
